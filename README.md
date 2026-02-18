@@ -51,7 +51,30 @@ A full-stack Mergers & Acquisitions platform built with React, TypeScript, Node.
 - **Validation**: Zod
 - **Security**: Helmet.js, CORS
 
-## Quick Start
+## 🚀 Quick Start
+
+**Want to get started quickly?** Check out our [**QUICKSTART.md**](QUICKSTART.md) guide for a step-by-step walkthrough!
+
+### Easy Setup Script
+
+We've included convenient setup scripts to help you get started:
+
+**Unix/Mac/Linux:**
+```bash
+./start.sh
+```
+
+**Windows:**
+```bash
+start.bat
+```
+
+These scripts will:
+- ✅ Check your Node.js installation
+- ✅ Install dependencies for both backend and frontend
+- ✅ Create .env files from examples
+- ✅ Generate Prisma client
+- ✅ Provide next steps to start the application
 
 ### Prerequisites
 - Node.js 18+ and npm
