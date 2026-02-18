@@ -91,7 +91,7 @@ export const getDealActivities = async (
   next: NextFunction
 ) => {
   try {
-    const { dealId } = req.params;
+    const dealId = req.params.dealId as string;
 
     const activities = await prisma.activity.findMany({
       where: { dealId },
@@ -118,7 +118,7 @@ export const getContactActivities = async (
   next: NextFunction
 ) => {
   try {
-    const { contactId } = req.params;
+    const contactId = req.params.contactId as string;
 
     const activities = await prisma.activity.findMany({
       where: { contactId },

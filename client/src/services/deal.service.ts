@@ -1,5 +1,5 @@
 import api from './api';
-import { Deal, DealFormData, DealStage, DealStats } from '../types/deal';
+import type { Deal, DealFormData, DealStage, DealStats } from '../types/deal';
 
 export const dealService = {
   async getAll(): Promise<Deal[]> {

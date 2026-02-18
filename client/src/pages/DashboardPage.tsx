@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import { dealService } from '../services/deal.service';
 import { activityService } from '../services/activity.service';
-import { DealStats } from '../types/deal';
-import { Activity } from '../types/activity';
+import type { DealStats } from '../types/deal';
+import type { Activity } from '../types/activity';
 import { TrendingUp, Building2, Users, FileText } from 'lucide-react';
 
 const DashboardPage: React.FC = () => {

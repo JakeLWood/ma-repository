@@ -54,7 +54,7 @@ export const getDealById = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     const deal = await prisma.deal.findUnique({
       where: { id },
@@ -153,7 +153,7 @@ export const updateDeal = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const data = dealSchema.partial().parse(req.body);
 
     const deal = await prisma.deal.update({
@@ -191,7 +191,7 @@ export const updateDealStage = async (
       throw new AppError('Unauthorized', 401);
     }
 
-    const { id } = req.params;
+    const id = req.params.id as string;
     const { stage } = z
       .object({ stage: z.nativeEnum(DealStage) })
       .parse(req.body);
@@ -234,7 +234,7 @@ export const deleteDeal = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     await prisma.deal.delete({
       where: { id },

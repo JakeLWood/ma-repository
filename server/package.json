@@ -12,14 +12,18 @@
     "prisma:seed": "ts-node prisma/seed.ts",
     "prisma:studio": "prisma studio"
   },
-  "keywords": ["m&a", "platform", "api"],
+  "keywords": [
+    "m&a",
+    "platform",
+    "api"
+  ],
   "author": "",
   "license": "ISC",
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "^7.4.0",
+    "@prisma/client": "^5.22.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
@@ -28,7 +32,7 @@
     "jsonwebtoken": "^9.0.3",
     "morgan": "^1.10.1",
     "multer": "^2.0.2",
-    "zod": "^4.3.6"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
@@ -39,7 +43,7 @@
     "@types/multer": "^2.0.0",
     "@types/node": "^25.2.3",
     "nodemon": "^3.1.11",
-    "prisma": "^7.4.0",
+    "prisma": "^5.22.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

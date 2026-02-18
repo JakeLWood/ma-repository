@@ -47,7 +47,7 @@ export const getCompanyById = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     const company = await prisma.company.findUnique({
       where: { id },
@@ -104,7 +104,7 @@ export const updateCompany = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const data = companySchema.partial().parse(req.body);
 
     const company = await prisma.company.update({
@@ -130,7 +130,7 @@ export const deleteCompany = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     await prisma.company.delete({
       where: { id },

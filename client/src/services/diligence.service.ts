@@ -1,5 +1,5 @@
 import api from './api';
-import { Document, Checklist, ChecklistFormData, ChecklistItemFormData } from '../types/diligence';
+import type { Document, Checklist, ChecklistFormData, ChecklistItemFormData } from '../types/diligence';
 
 export const documentService = {
   async getDealDocuments(dealId: string): Promise<Document[]> {

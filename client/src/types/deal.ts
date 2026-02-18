@@ -1,5 +1,5 @@
-import { Company } from './company';
-import { User } from './auth';
+import type { Company } from './company';
+import type { User } from './auth';
 
 export type DealStage = 'SOURCING' | 'SCREENING' | 'DUE_DILIGENCE' | 'NEGOTIATION' | 'CLOSING' | 'CLOSED';
 export type DealStatus = 'ACTIVE' | 'WON' | 'LOST' | 'ON_HOLD';

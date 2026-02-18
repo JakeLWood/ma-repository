@@ -1,5 +1,5 @@
 import api from './api';
-import { Activity, ActivityFormData } from '../types/activity';
+import type { Activity, ActivityFormData } from '../types/activity';
 
 export const activityService = {
   async getAll(): Promise<Activity[]> {

@@ -1,5 +1,5 @@
 import api from './api';
-import { Company, CompanyFormData } from '../types/company';
+import type { Company, CompanyFormData } from '../types/company';
 
 export const companyService = {
   async getAll(): Promise<Company[]> {

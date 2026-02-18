@@ -13,7 +13,7 @@ export const getDealDocuments = async (
   next: NextFunction
 ) => {
   try {
-    const { dealId } = req.params;
+    const dealId = req.params.dealId as string;
 
     const documents = await prisma.document.findMany({
       where: { dealId },
@@ -48,7 +48,7 @@ export const uploadDocument = async (
       throw new AppError('No file uploaded', 400);
     }
 
-    const { dealId } = req.params;
+    const dealId = req.params.dealId as string;
     const { folder, tags } = req.body;
 
     // Verify deal exists
@@ -104,7 +104,7 @@ export const getDocumentById = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     const document = await prisma.document.findUnique({
       where: { id },
@@ -137,7 +137,7 @@ export const downloadDocument = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     const document = await prisma.document.findUnique({
       where: { id },
@@ -163,7 +163,7 @@ export const deleteDocument = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     const document = await prisma.document.findUnique({
       where: { id },

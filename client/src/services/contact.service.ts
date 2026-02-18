@@ -1,5 +1,5 @@
 import api from './api';
-import { Contact, ContactFormData } from '../types/contact';
+import type { Contact, ContactFormData } from '../types/contact';
 
 export const contactService = {
   async getAll(): Promise<Contact[]> {

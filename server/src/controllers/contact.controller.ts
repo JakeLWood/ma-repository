@@ -45,7 +45,7 @@ export const getContactById = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     const contact = await prisma.contact.findUnique({
       where: { id },
@@ -117,7 +117,7 @@ export const updateContact = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const data = contactSchema.partial().parse(req.body);
 
     const contact = await prisma.contact.update({
@@ -148,7 +148,7 @@ export const deleteContact = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     await prisma.contact.delete({
       where: { id },

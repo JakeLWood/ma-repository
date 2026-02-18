@@ -21,7 +21,7 @@ export const getDealChecklists = async (
   next: NextFunction
 ) => {
   try {
-    const { dealId } = req.params;
+    const dealId = req.params.dealId as string;
 
     const checklists = await prisma.checklist.findMany({
       where: { dealId },
@@ -48,7 +48,7 @@ export const getChecklistById = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     const checklist = await prisma.checklist.findUnique({
       where: { id },
@@ -81,7 +81,7 @@ export const createChecklist = async (
   next: NextFunction
 ) => {
   try {
-    const { dealId } = req.params;
+    const dealId = req.params.dealId as string;
     const data = checklistSchema.parse(req.body);
 
     // Verify deal exists
@@ -121,7 +121,7 @@ export const updateChecklist = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const data = checklistSchema.partial().parse(req.body);
 
     const checklist = await prisma.checklist.update({
@@ -152,7 +152,7 @@ export const deleteChecklist = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     await prisma.checklist.delete({
       where: { id },
@@ -194,7 +194,7 @@ export const updateChecklistItem = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const data = checklistItemSchema.partial().parse(req.body);
 
     const item = await prisma.checklistItem.update({
@@ -220,7 +220,7 @@ export const deleteChecklistItem = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
 
     await prisma.checklistItem.delete({
       where: { id },
